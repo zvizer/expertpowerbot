@@ -1,0 +1,62 @@
+.message {
+  margin: 0 15px 20px;
+  padding: 10px 20px;
+  position: relative;
+  font-size: 20px;
+}
+
+.message.to {
+  background-color: #2095fe;
+  color: #fff;
+  margin-left: 100px;
+  text-align: right;
+}
+
+.message.from {
+  background-color: #e5e4e9;
+  color: #363636;
+  margin-right: 100px;
+  border-radius: 10px 10px 10px 0px;
+}
+
+.message.to+.message.to,
+.message.from+.message.from {
+  margin-top: -10px;
+}
+
+.message-container{
+height: 400px;
+overflow-y: scroll;
+}
+
+.message-container::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+}
+
+.message-container::-webkit-scrollbar-thumb {
+      background: #aaa;
+}
+
+svg{
+border-radius: 50%;
+  fill: rgb(9, 20, 5);
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.lets-chat{
+  display: flex;
+  justify-content:flex-start;
+  margin-bottom: 2px;
+}
+
+
+
+
+
+

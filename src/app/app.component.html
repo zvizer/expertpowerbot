@@ -1,0 +1,35 @@
+<div class="lets-chat">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
+    <path
+      d="M30 0H0v60h60V0zm18.78 50.75a20 20 0 00-37.4.14 28 28 0 1137.4-.14zM44.63 3.8zM13.26 5.1zm-7.17 43v.05zm47.79-36.25zm-11.77 12a12 12 0 11-12-12 12 12 0 0112 12.01z"
+    ></path>
+  </svg>
+  <span>Let's Chat!</span>
+</div>
+
+<input
+  #userInput
+  [(ngModel)]="value"
+  (keyup.enter)="sendMessage()"
+  [disabled]="disableInput"
+  type="text"
+/>
+<button (click)="sendMessage()" [disabled]="disableInput">Send</button>
+
+<span [className]="'float-right'">Total messages: {{ messages.length }}</span>
+<div #messageContainer class="message-container">
+  <ng-container *ngFor="let message of messages">
+    <div
+      class="message"
+      [ngClass]="{
+        from: message.author === 'bot',
+        to: message.author === 'user'
+      }"
+    >
+      {{ message.content }}
+    </div>
+  </ng-container>
+  <button *ngIf="messages.length" (click)="reset()" class="button button-clear">
+    Reset
+  </button>
+</div>
